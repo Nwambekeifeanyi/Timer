@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+				<meta charset="UTF-8">
+				<title>Page title</title>
+</head>
+<style>
+				body{
+								justify-content: center;
+								background:#bfbfff;
+				}
+				#time{
+				      width:50%;
+								display: flex;
+								background:#c8ad21;
+								justify-content: center;
+								font-size:90px;
+								font-weight:900;
+								margin:15%;
+								border:10px solid black;
+								box-shadow:20px 20px 50px 10px green;
+								padding:50px 100px;
+								border-radius:5%;
+								text-shadow:4px 4px gray ;
+				}
+				@media screen (min-width:700px){
+								font-size:40px;
+								background: blue;
+				}
+</style>
+<body>
+		   <div id="time">
+		   				<div id="hourValue"></div>		
+				     <div id="minuteValue"></div>		
+				     <div id="secondValue"></div>
+		   </div>
+		 		
+		<script>
+						let hourValue=document.getElementById("hourValue");
+let minuteValue=document.getElementById("minuteValue"); 
+let secondValue=document.getElementById("secondValue");
+let totalHour=3
+let totalMinute=totalHour*60
+let totalSecond=totalMinute*60
+
+
+
+function hours(){
+				totalHour--
+hourValue.innerHTML=totalHour+" : "
+}
+
+
+function minutes(){
+				totalMinute--
+    minute=totalMinute%60
+minuteValue.innerHTML=minute+" : "
+}
+
+function seconds(){
+				totalSecond--
+    second=totalSecond%60
+secondValue.innerHTML=second
+}
+
+ x=setInterval(hours,360000)
+ y=setInterval(minutes,60000)
+ z=setInterval(seconds,1000)
+ setTimeout(seconds,0)
+ setTimeout(minutes,0)
+ setTimeout(hours,0)
+
+
+</script>
+</body>
+</html>
